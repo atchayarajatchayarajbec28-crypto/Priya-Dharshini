@@ -1,0 +1,59 @@
+def print_rangoli(size):
+    import string
+    # Get all lowercase letters
+    alpha = string.ascii_lowercase
+
+    lines = []
+    for i in range(size):
+         s = "-".join(alpha[size-1 : size-i-1 : -1] + alpha[size-i-1 : size])
+        
+        # Center the string with '-' padding
+         lines.append(s.center(4 * size - 3, "-"))
+
+    # Print the top half (which includes the middle line)
+    # Then print the bottom half by reversing the top half (minus the middle)
+    print('\n'.join(lines + lines[:-1][::-1])) # your code goes here
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
+
+Your Output (stdout)
+
+    --------e--------
+
+    ------e-d-e------
+
+    ----e-d-c-d-e----
+
+    --e-d-c-b-c-d-e--
+
+    e-d-c-b-a-b-c-d-e
+
+    --e-d-c-b-c-d-e--
+
+    ----e-d-c-d-e----
+
+    ------e-d-e------
+
+    --------e--------
+
+Expected Output
+
+    --------e--------
+
+    ------e-d-e------
+
+    ----e-d-c-d-e----
+
+    --e-d-c-b-c-d-e--
+
+    e-d-c-b-a-b-c-d-e
+
+    --e-d-c-b-c-d-e--
+
+    ----e-d-c-d-e----
+
+    ------e-d-e------
+
+    --------e--------
