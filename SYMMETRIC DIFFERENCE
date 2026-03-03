@@ -1,0 +1,42 @@
+m = int(input())
+a = set(map(int, input().split()))
+n = int(input())
+b = set(map(int, input().split()))
+
+# Calculate symmetric difference
+# Elements in a or b, but not both
+sym_diff = a ^ b
+
+# Sort and print
+for num in sorted(sym_diff):
+    print(num)
+
+Input (stdin)
+
+    4
+
+    2 4 5 9
+
+    4
+
+    2 4 11 12
+
+Your Output (stdout)
+
+    5
+
+    9
+
+    11
+
+    12
+
+Expected Output
+
+    5
+
+    9
+
+    11
+
+    12
