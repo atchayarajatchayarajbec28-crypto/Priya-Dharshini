@@ -1,0 +1,31 @@
+TASK:
+You are given a complex Z. Your task is to convert it to polar coordinates.
+PROGRAM:
+import cmath
+
+# 1. Read the complex number input (e.g., "1+2j")
+z = complex(input().strip())
+
+# 2. Convert to polar coordinates
+# polar() returns a tuple: (modulus, phase_angle)
+r, phi = cmath.polar(z)
+
+# 3. Print the results
+print(r)
+print(phi)
+OUTPUT:
+Input (stdin)
+
+    1+2j
+
+Your Output (stdout)
+
+    2.23606797749979
+
+    1.1071487177940904
+
+Expected Output
+
+    2.23606797749979
+
+    1.1071487177940904
