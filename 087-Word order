@@ -1,0 +1,35 @@
+TASK:
+You are given n words. Some words may repeat. For each word, output its number of occurrences. The output order should 
+correspond with the input order of appearance of the word. See the sample input/output for clarification. 
+ROGRAM:
+import sys
+from collections import OrderedDict
+n = int(sys.stdin.readline())
+wordcounts = OrderedDict()
+for _ in range(n):
+    word = sys.stdin.readline().strip()
+    wordcounts[word] = wordcounts.get(word, 0) + 1
+print(len(wordcounts))
+print(*(wordcounts.values()))
+OUTPUT:
+Input (stdin)
+
+    4
+
+    bcdef
+
+    abcdefg
+
+    bcde
+
+    bcdef
+
+Your Output (stdout)
+
+    3
+
+    2 1 1
+
+Expected Output
+
+    3
