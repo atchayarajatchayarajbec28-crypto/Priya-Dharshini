@@ -1,0 +1,33 @@
+Task:
+Apply your knowledge of the .add() operation to help your friend Rupal.
+Rupal has a huge collection of country stamps. She decided to count the total number of distinct country stamps in her 
+collection. She asked for your help. You pick the stamps one by one from a stack of N country stamps.
+PROGRAM:
+n=int(input())
+country_set=set()
+for _ in range(n):
+    country=input().strip()
+    country_set.add(country)
+print(len(country_set))
+OUTPUT:
+Input (stdin)
+
+    7
+
+    UK
+
+    China
+
+    USA
+
+    France
+
+    New Zealand
+
+    UK
+
+    France
+
+Expected Output
+
+    5
