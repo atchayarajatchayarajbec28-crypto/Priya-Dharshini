@@ -1,0 +1,36 @@
+PROGRAM:
+test_case = int(input(""))
+for o in range(test_case):
+    try:
+        a ,b = map(int ,input("").split(" "))
+        print(int(a/b))
+    except ZeroDivisionError as e:
+        print("Error Code: integer division or modulo by zero")
+    except ValueError as e1:
+        print("Error Code:",e1)
+OUTPUT:
+Input (stdin)
+
+    3
+
+    1 0
+
+    2 $
+
+    3 1
+
+Your Output (stdout)
+
+    Error Code: integer division or modulo by zero
+
+    Error Code: invalid literal for int() with base 10: '$'
+
+    3
+
+Expected Output
+
+    Error Code: integer division or modulo by zero
+
+    Error Code: invalid literal for int() with base 10: '$'
+
+    3
