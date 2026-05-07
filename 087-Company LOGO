@@ -1,0 +1,31 @@
+TASK:
+A newly opened multinational brand has decided to base their company logo on the three most common characters in the company name. They are now trying out various 
+combinations of company names and logos based on this condition. Given a string , which is the company name in lowercase letters, your task is to find the top three most
+common characters in the string.
+Print the three most common characters along with their occurrence count.
+Sort in descending order of occurrence count.
+If the occurrence count is the same, sort the characters in alphabetical order.
+
+PROGRAM:
+#!/bin/python3
+
+def companyLogo(s):
+    literal_cnts = {}
+    dist_letters = set(s)
+    for char in dist_letters:
+        literal_cnts[char] = s.count(char)
+    sorted_kv = sorted(literal_cnts.items(),key=lambda x: (x[1],-ord(x[0])),reverse=True)
+    top_3 = sorted_kv[:3]
+    if top_3[0][1] == top_3[1][1] and top_3[0][1] > top_3[2][1]:
+        top_3[:2] = sorted(top_3[:2])
+    elif top_3[1][1] == top_3[2][1]:
+        top_3[1:] = sorted(top_3[1:])
+    elif top_3[0][1] == top_3[1][1] == top_3[2][1]:
+        top_3 = sorted(top_3)
+    for k,v in top_3:
+        print (k,v)
+        
+if __name__ == '__main__':
+    
+    S = input()
+    companyLogo(S)
